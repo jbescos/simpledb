@@ -14,13 +14,13 @@ import com.simpedb.core.utils.FileUtils;
 
 public final class SimpleDBConfig {
 	
-	private final static Logger log = LoggerFactory.getLogger(SimpleDBConfig.class);
-	private final static Properties config;
+	private static final Logger log = LoggerFactory.getLogger(SimpleDBConfig.class);
+	private static final Properties config;
 	
 	static {
 		String configFile = System.getProperty(SimpleDBConstants.ARG_CONFIG_PROPERTY);
 		if (configFile == null) {
-			log.debug("No {} was specified", SimpleDBConstants.ARG_CONFIG_PROPERTY);
+			log.debug("No {} was specified as argument ", SimpleDBConstants.ARG_CONFIG_PROPERTY);
 			configFile = SimpleDBConstants.DEFAULT_CONFIG_FILE;
 		}
 		log.info("Loading property file {}", configFile);
@@ -50,7 +50,7 @@ public final class SimpleDBConfig {
 		for (Entry<Object, Object> property : config.entrySet()) {
 			String key = property.getKey().toString();
 			if (key.startsWith(startsKey)) {
-				String truncated = key.substring(startsKey.length() - 1, key.length());
+				String truncated = key.substring(startsKey.length(), key.length());
 				properties.put(truncated, property.getValue());
 			}
 		}

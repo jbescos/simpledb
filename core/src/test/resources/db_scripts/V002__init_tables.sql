@@ -1,0 +1,1 @@
+insert into PERSONS (ID, LAST_NAME) values (1, 'simpledb');
