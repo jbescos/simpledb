@@ -8,5 +8,17 @@
 	</parent>
 	<artifactId>core</artifactId>
 	<packaging>jar</packaging>
+	<properties>
+		<h2-version>1.4.200</h2-version>
+	</properties>
 	<groupId>com.simpledb.core</groupId>
+	<dependencies>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>${h2-version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
 </project>
