@@ -15,14 +15,14 @@ public class ConnectionTest {
 
 	@Test
 	public void connection() throws SQLException {
-		List<String> records = new ArrayList<>();
-		try(Connection connection = ConnectionManager.get(); PreparedStatement ps = connection.prepareStatement("select * from Persons")) {
+		List<Integer> records = new ArrayList<>();
+		try(Connection connection = ConnectionManager.get(); PreparedStatement ps = connection.prepareStatement("select * from QUESTIONNAIRE_DESCRIPTION")) {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				records.add(rs.getString("LAST_NAME"));
+				records.add(rs.getInt("QUESTIONNAIRE_ID"));
 			}
 		}
-		assertTrue("Records " + records, records.contains("simpledb"));
+		assertTrue("Records " + records, records.contains(1));
 	}
 	
 }
