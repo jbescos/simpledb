@@ -20,7 +20,7 @@
 		<maven.compiler.target>11</maven.compiler.target>
 		<maven.compiler-version>3.1</maven.compiler-version>
 		<logback-version>1.0.13</logback-version>
-		<junit-version>4.11</junit-version>
+		<junit-version>4.13.1</junit-version>
 		<flyway-version>6.1.1</flyway-version>
 	</properties>
 
